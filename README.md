@@ -4,9 +4,12 @@
 > I would like to get more experience with AWS, Spark, and Flask this capstone, so when reviewing the ideas, please keep that in mind and let me know if you think any project would be particularly good for those technologies.
 
 ## 1. Recipe Recommender
-Background: I've always loved food, and one of my hobbies is to try to recreate my favorite restaurant dishes at home. Since COVID began, my partner and I haven't been going to restaurants, and we've been cooking a ton. We have expanded (and exhausted) our recreated restaurant dishes portfolio. Now we are in the exploratory phase to add new recipes to our cook book.
 
-Minimum Viable Product: Create a recipe recommender (flask app) using features such as title and ingredients. For example, a user could search for a recipe title (or keywords) and/or specify ingredients they have on hand and the recommender will provide them a given number of recipe recommendations.
+### Background: 
+I've always loved food, and one of my hobbies is to try to recreate my favorite restaurant dishes at home. Since COVID began, my partner and I haven't been going to restaurants, and we've been cooking a ton. We have expanded (and exhausted) our recreated restaurant dishes portfolio. Now we are in the exploratory phase to add new recipes to our cook book.
+
+### Minimum Viable Product:
+Create a content-based recipe recommender (flask app) using features such as title and ingredients. For example, a user could search for a recipe title (or keywords) and/or specify ingredients they have on hand and the recommender will provide them a given number of recipe recommendations.
 
 Getting to the data:
 1. I came across this [website](https://recipe-search.typesense.org/) (open source recipe search app) 
