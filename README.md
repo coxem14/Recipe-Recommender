@@ -28,19 +28,7 @@ Things I wish this dataset included but doesn't immediately (the actual website 
 * Speaking of categories of food, types of food might be interesting to be able to filter by as well (such as 'soup, sandwich, salad, pizza, etc.')
   > *The user will be able to specify these in the keyword search if nothing else*
 
-## 2. Board Game Recommender
-
-### Background: 
-I love boardgames as a way to spend time with friends (Tabletop Simulator even makes this possible in COVID times). There are so many board games that I often have trouble figuring out what games to try next.
-
-### Minimum Viable Product:
-Create a similarity-based boardgame recommender (flask app) using most important features (would need to find the most important features using some kind of dimensionality reduction technique). For example, a user could search for a specific game and/or specify a game that they like (or dislike) and the recommender will provide them a given number of game recommendations of the top rated games that are most similar (or most dissimilar) to the game they entered. Ideally the user would also be able to narrow the results by filtering by certain features such as number of players, play time, age range, etc.
-
-Data:
-* Kaggle: [20000 Boardgames Dataset](https://www.kaggle.com/extralime/20000-boardgames-dataset)
-  > The data for the dataset was scraped directly from boardgamegeek.com. The rank of each game is based on its rank on January 13th, 2020 (previous version: Jan 8,2020). The dataset is for practicing EDA and recommender engines. The dataset has 52 feature columns.
-
-## 3. Quick, Draw! Image Classification
+## 2. Quick, Draw! Image Classification
 
 ### Background: 
 I'd like to get more experience with image classification, and this dataset looks really interesting.
@@ -53,3 +41,17 @@ Data:
 * [Quick, Draw! The Data website](https://quickdraw.withgoogle.com/data)
 * [The Quick, Draw! Dataset](https://github.com/googlecreativelab/quickdraw-dataset)
   > The Quick Draw Dataset is a collection of 50 million drawings across 345 categories, contributed by players of the game Quick, Draw!. The drawings were captured as timestamped vectors, tagged with metadata including what the player was asked to draw and in which country the player was located.
+
+## 3. Board Game Recommender
+
+### Background: 
+I love boardgames as a way to spend time with friends (Tabletop Simulator even makes this possible in COVID times). There are so many board games that I often have trouble figuring out what games to try next.
+
+### Minimum Viable Product:
+Create a similarity-based boardgame recommender (flask app) using most important features (would need to find the most important features using some kind of dimensionality reduction technique). For example, a user could search for a specific game and/or specify a game that they like (or dislike) and the recommender will provide them a given number of game recommendations of the top rated games that are most similar (or most dissimilar) to the game they entered. Ideally the user would also be able to narrow the results by filtering by certain features such as number of players, play time, age range, etc.
+
+Data:
+* Kaggle: [20000 Boardgames Dataset](https://www.kaggle.com/extralime/20000-boardgames-dataset)
+  > The data for the dataset was scraped directly from boardgamegeek.com. The rank of each game is based on its rank on January 13th, 2020 (previous version: Jan 8,2020). The dataset is for practicing EDA and recommender engines. The dataset has 52 feature columns.
+
+
