@@ -40,4 +40,16 @@ Data:
 * Kaggle: [20000 Boardgames Dataset](https://www.kaggle.com/extralime/20000-boardgames-dataset)
   > The data for the dataset was scraped directly from boardgamegeek.com. The rank of each game is based on its rank on January 13th, 2020 (previous version: Jan 8,2020). The dataset is for practicing EDA and recommender engines. The dataset has 52 feature columns.
 
-## 3. Image Classification - Dataset TBD
+## 3. Quick, Draw! Image Classification
+
+### Background: 
+I'd like to get more experience with image classification, and this dataset looks really interesting.
+
+### Minimum Viable Product:
+1. Create a neural network image classifier. It would be cool also if it could predict on doodles in real time (or on video while doodling). 
+2. Explore if people from different countries doodle differently (see if a neural network can classify country of origin from doodles). 
+
+Data:
+* [Quick, Draw! The Data website](https://quickdraw.withgoogle.com/data)
+* [The Quick, Draw! Dataset](https://github.com/googlecreativelab/quickdraw-dataset)
+  > The Quick Draw Dataset is a collection of 50 million drawings across 345 categories, contributed by players of the game Quick, Draw!. The drawings were captured as timestamped vectors, tagged with metadata including what the player was asked to draw and in which country the player was located.
