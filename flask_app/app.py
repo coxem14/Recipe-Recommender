@@ -7,6 +7,12 @@ from sklearn.metrics.pairwise import cosine_distances
 
 app = Flask(__name__)
 
+
+
+
+
+
+
 @app.route('/')
 @app.route('/home', methods=['GET','POST'])
 def home(title=None):
@@ -23,7 +29,10 @@ def about():
 @app.route('/results', methods=['GET', 'POST'])
 def results():
     keyword = request.form['keyword']
-    return f'The keyword entered was {keyword}'
+    if keyword == '':
+        return 'You must enter a keyword.'
+    else:
+        return render_template("results.html", keyword=keyword)
 
     # filename = 'lda.pkl'
     # model = pickle.load(open(filename, 'rb'))
