@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, request
 import pickle
-import pandas as import pd
+import pandas as pd
 import numpy as np
 from sklearn.metrics.pairwise import cosine_distances
 
@@ -20,7 +20,15 @@ def explore():
 def about():
     return render_template("about.html")
 
-#@app.route('/results', methods=['GET', 'POST'])
+@app.route('/results', methods=['GET', 'POST'])
+def results():
+    keyword = request.form['keyword']
+    return f'The keyword entered was {keyword}'
+
+    # filename = 'lda.pkl'
+    # model = pickle.load(open(filename, 'rb'))
+
+
 
 
 
