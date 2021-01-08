@@ -89,6 +89,8 @@ def results():
     if keyword == '':
         return 'You must enter a keyword.'
     recipe_recs, rec_idxs, reference_recipes, keyword_idxs = closest_recipes(keyword, idx_arr, recipes, probs)
+    if len(recipe_recs) < 1:
+        return 'Keyword not found.'
     results_df = get_results_df(recipe_recs, links, rec_idxs)
     return render_template("results.html", results_df=results_df)
 
