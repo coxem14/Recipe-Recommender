@@ -46,6 +46,11 @@
   <th><center>{{col}}</center></th>
   {% endfor %}
   </tr>
+  {% for _, row in results_df.iloc[:1].iterrows() %}
+    {% for entry in row %}
+    <td>{{ entry }}</td>
+    {% endfor %}
+  </tr>
 </table>
 
 
