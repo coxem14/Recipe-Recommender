@@ -14,14 +14,39 @@
         background-size: cover;
     }
 
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 1000px) {
        body {
            background-size: auto;
        }
+
+       .table {
+        text-align: center;
+        display: flex;
+        justify-content: flex-start;
+        }
     }
+
+    .title {
+        text-align: center;
+    }
+
+    .table {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
   </style>
 
-<h1>The keyword entered was {{keyword}}</h1>
+<h2 class='title'>Here are some recipes you might like:</h2>
+
+<table class=table>
+  <tr>
+  {% for col in results_df.columns %}
+  <th><center>{{col}}</center></th>
+  {% endfor %}
+  </tr>
+</table>
 
 
 
