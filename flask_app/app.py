@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for, request
-import pickle5
+import pickle
 import pandas as pd
 import numpy as np
 from sklearn.metrics.pairwise import cosine_distances
@@ -10,13 +10,13 @@ app = Flask(__name__)
 
 # load df
 with open('df.pkl', 'rb') as f:
-    df = pickle5.load(f)
+    df = pickle.load(f)
 
 # load vectorizer
-count_vec = joblib.load('../models/vec_6_tid.joblib')
+count_vec = joblib.load('../models/vec_6_tid_pickle4.joblib')
 
 # load model
-lda = joblib.load('../models/lda_model_6_tid.joblib')
+lda = joblib.load('../models/lda_model_6_tid_pickle4.joblib')
 
 # define docs
 docs = df['cleaned_bow']
