@@ -1,1 +1,2 @@
 *.csv filter=lfs diff=lfs merge=lfs -text
+flask_app/df.pkl filter=lfs diff=lfs merge=lfs -text
