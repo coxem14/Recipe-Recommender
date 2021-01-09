@@ -30,13 +30,13 @@
 
     .title {
         text-align: center;
-        font-size: xxx-large;
+        font-size: xx-large;
     }
 
   </style>
 
   <div class="main" style="padding: 20px 15% 20px 15%;">
-    <h2 class="title">{{title}}:</h2>
+    <h2 class="title">{{title}}</h2>
     {% for _, row in results_df.iterrows() %}
       <a href="{{ row[1] }}">{{ row[0] }}</a>
       <br>

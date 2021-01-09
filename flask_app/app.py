@@ -92,7 +92,7 @@ def make_title_from_keyword(keyword):
 
 title_d = {'guacamole': 'Holy Guacamole!'}
 
-generic_titles = ['Curious about {}? Try these on for size:']
+generic_titles = ['Curious about {}?<br />Try these on for size:']
 
 @app.route('/')
 @app.route('/home', methods=['GET','POST'])
