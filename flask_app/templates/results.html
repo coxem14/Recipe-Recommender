@@ -25,10 +25,12 @@
       background-color: rgba(255, 255, 255, 0.8);
       margin-top: 50px;
       text-align: center;
+      font-size: larger;
     }
 
     .title {
         text-align: center;
+        font-size: xxx-large;
     }
 
   </style>
@@ -37,6 +39,7 @@
     <h2 class="title">Recipes similar to {{keyword}}:</h2>
     {% for _, row in results_df.iterrows() %}
       <a href="{{ row[1] }}">{{ row[0] }}</a>
+      <br>
       <br>
     {% endfor %}
   </div>
