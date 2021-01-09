@@ -42,7 +42,8 @@
   <div class="main" style="padding: 20px 15% 20px 15%;">
     <h2 class="title">Recipes similar to {{keyword}}:</h2>
 
-    <table class="table" style="border-top: transparent;">
+    <table class="table">
+      <tbody style="border-color: transparent;">
       <tr>
       {% for col in results_df.columns %}
       <th><center>{{col}}</center></th>
@@ -54,6 +55,7 @@
         {% endfor %}
       </tr>
       {% endfor %}
+    </tbody>
     </table>
 
   </div>
