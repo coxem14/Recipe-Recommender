@@ -92,7 +92,7 @@ def results():
     if len(recipe_recs) < 1:
         return 'Keyword not found.'
     results_df = get_results_df(recipe_recs, links, rec_idxs)
-    return render_template("results.html", results_df=results_df)
+    return render_template("results.html", results_df=results_df, keyword=keyword)
 
 
 
