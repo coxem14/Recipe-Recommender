@@ -30,8 +30,21 @@ probs = lda.transform(tf)
 # define recipes
 recipes = df['title']
 
-# define links
+# define links and convert to urls
 links = df['link']
+
+def parse_links(link):
+    if link.startswith('http://') or link.startswith('https://'):
+        return link
+    else:
+        url = 'http://' + link
+        return url
+    
+def series_link_to_url(links):
+    urls = links.apply(parse_links)
+    return urls
+
+urls = series_link_to_url(links)
 
 # define indices
 idx_arr = np.array(recipes.index)
@@ -44,7 +57,6 @@ def get_keyword_idxs(keyword, idx_arr, recipes):
         keyword_idx = int(np.where(idx_arr == sample_idx)[0])
         keyword_idxs.append(keyword_idx)
     return keyword_idxs
-
 
 def closest_recipes(keyword, idx_arr, recipes, probs, n_recipes=10):
     keyword_idxs = get_keyword_idxs(keyword, idx_arr, recipes)
@@ -64,9 +76,9 @@ def closest_recipes(keyword, idx_arr, recipes, probs, n_recipes=10):
     
     return recipe_recs, rec_idxs, reference_recipes, keyword_idxs
 
-def get_results_df(recipe_recs, links, rec_idxs):
-    rec_links = np.array(links)[rec_idxs]
-    results = {'Recipe': recipe_recs, 'Link': rec_links}
+def get_results_df(recipe_recs, urls, rec_idxs):
+    rec_urls = np.array(urls)[rec_idxs]
+    results = {'Recipe': recipe_recs, 'Link': rec_urls}
     results_df = pd.DataFrame(results)
     return results_df
 
@@ -91,7 +103,7 @@ def results():
     recipe_recs, rec_idxs, reference_recipes, keyword_idxs = closest_recipes(keyword, idx_arr, recipes, probs)
     if len(recipe_recs) < 1:
         return 'Keyword not found.'
-    results_df = get_results_df(recipe_recs, links, rec_idxs)
+    results_df = get_results_df(recipe_recs, urls, rec_idxs)
     return render_template("results.html", results_df=results_df, keyword=keyword)
 
 

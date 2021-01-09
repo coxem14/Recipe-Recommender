@@ -37,6 +37,7 @@
     <h2 class="title">Recipes similar to {{keyword}}:</h2>
     {% for _, row in results_df.iterrows() %}
       <a href="{{ row[1] }}">{{ row[0] }}</a>
+      <br>
     {% endfor %}
   </div>
 
