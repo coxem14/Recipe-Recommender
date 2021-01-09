@@ -82,6 +82,18 @@ def get_results_df(recipe_recs, urls, rec_idxs):
     results_df = pd.DataFrame(results)
     return results_df
 
+def make_title_from_keyword(keyword):
+    keyword = keyword.lower()
+    if keyword in title_d:
+        return title_d[keyword]
+    else:
+        title = np.random.choice(generic_titles, size=1)[0]
+        return title.format(keyword)
+
+title_d = {'guacamole': 'Holy Guacamole!'}
+
+generic_titles = ['Curious about {}? Try these on for size:']
+
 @app.route('/')
 @app.route('/home', methods=['GET','POST'])
 def home(title=None):
@@ -104,7 +116,8 @@ def results():
     if len(recipe_recs) < 1:
         return 'Keyword not found.'
     results_df = get_results_df(recipe_recs, urls, rec_idxs)
-    return render_template("results.html", results_df=results_df, keyword=keyword)
+    title = make_title_from_keyword(keyword)
+    return render_template("results.html", results_df=results_df, title=title)
 
 
 
