@@ -62,16 +62,13 @@
   <div class="main" style="padding: 20px 15% 20px 15%;">
     <h2 class="title">{{title}}</h2>
     <br>
-    <br>
     {% for _, row in results_df.iterrows() %}
       <a href="{{ row[1] }}">{{ row[0] }}</a>
       <br>
     {% endfor %}
     <br>
-    <br>
     <div class='buttons'>
-      <form action='/results', method='POST'>
-        <button type="submit">Get More Recipes</button>
+        <button type="submit" value="REFRESH">Get More Recipes</button>
       </form>
 
       <form action='/explore', method='POST'>
