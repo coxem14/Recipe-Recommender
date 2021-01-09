@@ -65,13 +65,14 @@
       <a href="{{ row[1] }}">{{ row[0] }}</a>
       <br>
     {% endfor %}
+
+    <div class='buttons'>
+      <form action='/explore', method='POST'>
+      <button type="submit" >Return to Explore</button>
+      </form>
+      </div>
   </div>
 
-  <div class='buttons'>
-    <form action='/explore', method='POST'>
-    <button type="submit" >Return to Explore</button>
-    </form>
-    </div>
 
 </html>
 
