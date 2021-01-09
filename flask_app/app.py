@@ -90,9 +90,40 @@ def make_title_from_keyword(keyword):
         title = np.random.choice(generic_titles, size=1)[0]
         return title.format(keyword)
 
-title_d = {'guacamole': 'Holy Guacamole!'}
+title_d = {'guacamole': 'Holy Guacamole!',
+           'apple': 'Are any of these the apple of your eye?',
+           'apple pie': 'Apple pie of your eye?',
+           'buns': 'Want buns in the oven?',
+           'bun': 'Want a bun in the oven?',
+           'cinnamon bun': 'Want a cinnamon bun in the oven?',
+           'cheese': 'Sweet dreams are made of cheese...',
+           'cheesy': "A little cheesy, but still grate:",
+           'bread': 'Best thing since sliced bread:',
+           'bacon': 'Bring home the bacon!',
+           'butter': 'You butter believe it!',
+           'cake': 'You can have your cake and eat it, too.',
+           'chocolate cake': 'You can have your chocolate cake and eat it, too.',
+           'tea': 'Any of these your cup of tea?',
+           'enchilada': 'Recipes, links, the whole enchilada...',
+           'enchiladas': 'Recipes, links, the whole enchilada...',
+           'egg': 'Check out these egg-cellent recipes:',
+           'eggs': 'Check out these eggs-quisite recipes:',
+           'gravy': 'All aboard the gravy train!',
+           'spice': 'Spice things up!',
+           'pie': 'Finding new recipes is easy as pie!',
+           'coffee': 'Wake up and smell the coffee!',
+           'potatoes': 'Po-tay-toes! Boil em, mash em, stick em in a stew...',
+           'omelet': "You can't make an omelet without breaking some eggs...",
+           'omelette': "You can't make an omelette without breaking some eggs...",
+           'pizza': 'You wanna pizza these?',
+           'pea': "Don't worry, be hap-pea",
+           'thyme': 'Well, well, well. Would you look at the thyme?',
+           'noodle': 'Here are some recipes to noodle over:'}
 
-generic_titles = ['Curious about {}?<br />Try these on for size:']
+generic_titles = ['Curious about {}? Maybe these will hit the spot:',
+                  "Curious about {}? Here's some food for thought:",
+                  'Curious about {}? Dig into these:',
+                  'Curious about {}? Chew on these:']
 
 @app.route('/')
 @app.route('/home', methods=['GET','POST'])
