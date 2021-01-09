@@ -33,6 +33,30 @@
         font-size: xx-large;
     }
 
+    .buttons {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+
+    button {
+                padding: 1vh 2vw;
+                background-color: #6BAE87;
+                color: white;
+                border-radius: 16px;
+                border-color: white; 
+                padding-left: 12px; 
+                padding-right: 12px; 
+                font-size: 16px; 
+                font-weight: bold;
+            }
+
+            button:hover {
+                background-color: rgba(0,0,0,0);
+                color: #444444;
+                border-color: #444444;
+
+            }
   </style>
 
   <div class="main" style="padding: 20px 15% 20px 15%;">
@@ -43,8 +67,11 @@
     {% endfor %}
   </div>
 
-
-
+  <div class='buttons'>
+    <form action='/explore', method='POST'>
+    <button type="submit" >Return to Explore</button>
+    </form>
+    </div>
 
 </html>
 

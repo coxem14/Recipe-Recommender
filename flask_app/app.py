@@ -120,10 +120,10 @@ title_d = {'guacamole': 'Holy Guacamole!',
            'thyme': 'Well, well, well. Would you look at the thyme?',
            'noodle': 'Here are some recipes to noodle over:'}
 
-generic_titles = ['Curious about {}? Maybe these will hit the spot:',
-                  "Curious about {}? Here's some food for thought:",
-                  'Curious about {}? Dig into these:',
-                  'Curious about {}? Chew on these:']
+generic_titles = ['Curious about "{}"? Maybe these will hit the spot:',
+                  "Curious about '{}'? Here's some food for thought:",
+                  'Curious about "{}"? Dig into these:',
+                  'Curious about "{}"? Chew on these:']
 
 @app.route('/')
 @app.route('/home', methods=['GET','POST'])
