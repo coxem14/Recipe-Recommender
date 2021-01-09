@@ -31,10 +31,11 @@
         text-align: center;
     }
 
-    .table {
+    table {
         text-align: center;
         display: flex;
         justify-content: center;
+        border-color: transparent;
     }
 
   </style>
@@ -43,7 +44,6 @@
     <h2 class="title">Recipes similar to {{keyword}}:</h2>
 
     <table class="table">
-      <tbody style="border-color: transparent;">
       <tr>
       {% for col in results_df.columns %}
       <th><center>{{col}}</center></th>
@@ -55,7 +55,6 @@
         {% endfor %}
       </tr>
       {% endfor %}
-    </tbody>
     </table>
 
   </div>
