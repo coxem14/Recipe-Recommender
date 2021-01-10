@@ -148,7 +148,7 @@ def results():
         return 'Keyword not found.'
     results_df = get_results_df(recipe_recs, urls, rec_idxs)
     title = make_title_from_keyword(keyword)
-    return render_template("results.html", results_df=results_df, title=title)
+    return render_template("results.html", results_df=results_df, title=title, keyword=keyword)
 
 
 
