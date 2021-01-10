@@ -68,8 +68,13 @@
     {% endfor %}
     <br>
     <div class='buttons'>
-        <button type="submit" onClick="refreshPage()">Get More Recipes</button>
-      </form>
+        <button type="button" onClick="Refresh()">Get More Recipes</button>
+
+        <script>
+            function Refresh() {
+                window.parent.location = window.parent.location.href;
+            }
+        </script>
 
       <form action='/explore', method='POST'>
         <button type="submit" >Return to Explore</button>
