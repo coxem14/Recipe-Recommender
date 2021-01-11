@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request
+from flask import Flask, render_template, request
 import pickle
 import pandas as pd
 import numpy as np
@@ -9,14 +9,14 @@ import joblib
 app = Flask(__name__)
 
 # load df
-with open('df.pkl', 'rb') as f:
+with open('../dataframes/new_df_pickle_4.pkl', 'rb') as f:
     df = pickle.load(f)
 
 # load vectorizer
-count_vec = joblib.load('../models/vec_6_tid_pickle4.joblib')
+count_vec = joblib.load('../models/new_vec_pickle_4.joblib')
 
 # load model
-lda = joblib.load('../models/lda_model_6_tid_pickle4.joblib')
+lda = joblib.load('../models/new_lda_pickle_4.joblib')
 
 # define docs
 docs = df['cleaned_bow']
@@ -30,21 +30,8 @@ probs = lda.transform(tf)
 # define recipes
 recipes = df['title']
 
-# define links and convert to urls
-links = df['link']
-
-def parse_links(link):
-    if link.startswith('http://') or link.startswith('https://'):
-        return link
-    else:
-        url = 'http://' + link
-        return url
-    
-def series_link_to_url(links):
-    urls = links.apply(parse_links)
-    return urls
-
-urls = series_link_to_url(links)
+# define urls
+urls = df['urls']
 
 # define indices
 idx_arr = np.array(recipes.index)
