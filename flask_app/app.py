@@ -33,7 +33,7 @@ probs = lda.transform(tf)
 recipes = df_subset['title']
 
 # define urls
-urls = df['urls']
+urls = df_subset['urls']
 
 # define indices
 idx_arr = np.array(recipes.index)
