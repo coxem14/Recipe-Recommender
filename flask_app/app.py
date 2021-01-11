@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request
+from flask import Flask, render_template, request
 import pickle
 import pandas as pd
 import numpy as np
@@ -9,8 +9,10 @@ import joblib
 app = Flask(__name__)
 
 # load df
-with open('df.pkl', 'rb') as f:
+with open('../dataframes/full_data_clean_df_pickle4.pkl', 'rb') as f:
     df = pickle.load(f)
+
+df_subset = df.sample(frac=0.1, replace=False)
 
 # load vectorizer
 count_vec = joblib.load('../models/vec_6_tid_pickle4.joblib')
@@ -19,7 +21,7 @@ count_vec = joblib.load('../models/vec_6_tid_pickle4.joblib')
 lda = joblib.load('../models/lda_model_6_tid_pickle4.joblib')
 
 # define docs
-docs = df['cleaned_bow']
+docs = df_subset['cleaned_bow']
 
 # vectorize docs
 tf = count_vec.fit_transform(docs)
