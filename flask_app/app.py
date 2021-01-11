@@ -9,14 +9,14 @@ import joblib
 app = Flask(__name__)
 
 # load df
-with open('../dataframes/new_df_pickle_4.pkl', 'rb') as f:
+with open('../dataframes/250k_new_df_pickle_4.pkl', 'rb') as f:
     df = pickle.load(f)
 
 # load vectorizer
-count_vec = joblib.load('../models/new_vec_pickle_4.joblib')
+count_vec = joblib.load('../models/250k_new_vec_pickle_4.joblib')
 
 # load model
-lda = joblib.load('../models/new_lda_pickle_4.joblib')
+lda = joblib.load('../models/250k_new_lda_pickle_4.joblib')
 
 # define docs
 docs = df['cleaned_bow']
