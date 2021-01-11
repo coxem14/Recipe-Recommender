@@ -9,7 +9,7 @@ import joblib
 app = Flask(__name__)
 
 # load df
-with open('../dataframes/250k_new_df_pickle_4.pkl', 'rb') as f:
+with open('./250k_new_df_pickle_4.pkl', 'rb') as f:
     df = pickle.load(f)
 
 # load vectorizer
