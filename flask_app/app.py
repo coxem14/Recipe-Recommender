@@ -32,21 +32,8 @@ probs = lda.transform(tf)
 # define recipes
 recipes = df['title']
 
-# define links and convert to urls
-links = df['link']
-
-def parse_links(link):
-    if link.startswith('http://') or link.startswith('https://'):
-        return link
-    else:
-        url = 'http://' + link
-        return url
-    
-def series_link_to_url(links):
-    urls = links.apply(parse_links)
-    return urls
-
-urls = series_link_to_url(links)
+# define urls
+urls = df['urls']
 
 # define indices
 idx_arr = np.array(recipes.index)
