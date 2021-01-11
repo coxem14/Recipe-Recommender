@@ -12,7 +12,7 @@ app = Flask(__name__)
 with open('../dataframes/full_data_clean_df_pickle4.pkl', 'rb') as f:
     df = pickle.load(f)
 
-df_subset = df.sample(frac=0.1, replace=False)
+df_subset = df.sample(frac=0.153, replace=False)
 
 # load vectorizer
 count_vec = joblib.load('../models/vec_6_tid_pickle4.joblib')
@@ -30,7 +30,7 @@ tf = count_vec.fit_transform(docs)
 probs = lda.transform(tf)
 
 # define recipes
-recipes = df['title']
+recipes = df_subset['title']
 
 # define urls
 urls = df['urls']
