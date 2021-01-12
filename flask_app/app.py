@@ -13,19 +13,21 @@ with open('./250k_new_df_pickle_4.pkl', 'rb') as f:
     df = pickle.load(f)
 
 # load vectorizer
-count_vec = joblib.load('../models/250k_new_vec_pickle_4.joblib')
+# count_vec = joblib.load('../models/250k_new_vec_pickle_4.joblib')
 
 # load model
-lda = joblib.load('../models/250k_new_lda_pickle_4.joblib')
+# lda = joblib.load('../models/250k_new_lda_pickle_4.joblib')
 
 # define docs
 docs = df['cleaned_bow']
 
 # vectorize docs
-tf = count_vec.fit_transform(docs)
+# tf = count_vec.fit_transform(docs)
 
 # get probability matrix
-probs = lda.transform(tf)
+# probs = lda.transform(tf)
+with open('../models/probs_pickle_4.pkl', 'rb') as f:
+    probs = pickle.load(f)
 
 # define recipes
 recipes = df['title']
