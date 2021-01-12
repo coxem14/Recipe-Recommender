@@ -79,3 +79,18 @@ display: flex;
 justify-content: space-between;
 }
 
+div#content {
+    display: none;
+    }
+
+div#loading {
+    top: 200 px;
+    margin: auto;
+    position: absolute;
+    z-index: 1000;
+    width: 160px;
+    height: 24px;
+    background: url(ajax-loader.gif);
+    cursor: wait;
+    }
+

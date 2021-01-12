@@ -1,79 +1,85 @@
-{% extends "layout.html" %}
+<div id="loading"></div>
+<div id="content">
+    {% extends "layout.html" %}
 
-{% block content %}
+    {% block content %}
+    <html>
+    <style>
 
-<html>
-  <style>
+        body {
+            background: #fafafa;
+            color: #333333;
+            margin-top: 5rem;
+            background-image: url('https://www.foodingredientfacts.org/wp-content/uploads/2017/11/AdobeStock_49033437-dont-fear-ingredients-in-your-food-1024x783.jpeg');
+            width: 100%;
+            background-size: cover;
+        }
 
-    body {
-        background: #fafafa;
-        color: #333333;
-        margin-top: 5rem;
-        background-image: url('https://www.foodingredientfacts.org/wp-content/uploads/2017/11/AdobeStock_49033437-dont-fear-ingredients-in-your-food-1024x783.jpeg');
-        width: 100%;
-        background-size: cover;
-    }
+        @media only screen and (max-width: 600px) {
+        body {
+            background-size: auto;
+        }
+        }
 
-    @media only screen and (max-width: 600px) {
-       body {
-           background-size: auto;
-       }
-    }
-
-    .main {
-    background-color: rgba(255, 255, 255, 0.7);
-    margin-top: 50px;
-    text-align: center;
-    }
-    
-    .move-button {
-    display: flex;
-    justify-content: center;
-    }
-
-    button {
-                padding: 1vh 2vw;
-                background-color: #6BAE87;
-                color: white;
-                border-radius: 16px; 
-                border-color:white;
-                padding-left: 12px; 
-                padding-right: 12px; 
-                font-size: 16px; 
-                font-weight: bold;
-            }
-
-            button:hover {
-                background-color: rgba(0,0,0,0);
-                color: #444444;
-                border-color: #444444;
-                border: 2px solid #444444;
-            }
-    </style>
-
-
-<div class="main" style="padding: 20px 25% 20px 25%;">
-
-    <form action='/results', method='POST'>
-    <div><h1><b>Explore recipes by keyword(s)</b></h1></div>
-    <div class = "form-group">
-        <label for='keyword(s)'><i><h4>try "pizza" or "guacamole" or "chocolate cake", etc.</h4></i></label>
-        <br>
-        <input type='text' name='keyword' id='keyword(s)' autocomplete='off'>
-    </div>
-
-    <br>
-    
-    <div class='move-button'>
+        .main {
+        background-color: rgba(255, 255, 255, 0.7);
+        margin-top: 50px;
+        text-align: center;
+        }
         
-    <button type="submit">Get Results</button>
+        .move-button {
+        display: flex;
+        justify-content: center;
+        }
+
+        button {
+                    padding: 1vh 2vw;
+                    background-color: #6BAE87;
+                    color: white;
+                    border-radius: 16px; 
+                    border-color:white;
+                    padding-left: 12px; 
+                    padding-right: 12px; 
+                    font-size: 16px; 
+                    font-weight: bold;
+                }
+
+                button:hover {
+                    background-color: rgba(0,0,0,0);
+                    color: #444444;
+                    border-color: #444444;
+                    border: 2px solid #444444;
+                }
+        </style>
+
+
+    <div class="main" style="padding: 20px 25% 20px 25%;">
+
+        <form action='/results', method='POST'>
+        <div><h1><b>Explore recipes by keyword(s)</b></h1></div>
+        <div class = "form-group">
+            <label for='keyword(s)'><i><h4>try "pizza" or "guacamole" or "chocolate cake", etc.</h4></i></label>
+            <br>
+            <input type='text' name='keyword' id='keyword(s)' autocomplete='off'>
+        </div>
+
+        <br>
+        
+        <div class='move-button'>
+            
+        <button type="submit">Get Results</button>
+
+        </div>
+
+        </form>
+
 
     </div>
 
-    </form>
+    </html>
+
+    {% endblock content %}  
 
 </div>
 
-</html>
 
-{% endblock content %}
