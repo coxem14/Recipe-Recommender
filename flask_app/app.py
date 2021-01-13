@@ -52,6 +52,10 @@ def closest_recipes(keyword, idx_arr, recipes, probs, n_recipes=10):
     
     d={}
     for idx in keyword_idxs:
+        if idx not in d:
+            d[idx] = 0.5
+        else:
+            d[idx] += 0.5
         sims = cosine_distances(probs[idx].reshape(1, -1), probs).argsort()[0]
         for sim in sims[1:n_recipes+1]:
             if sim not in d:
