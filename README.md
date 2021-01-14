@@ -104,13 +104,13 @@ docs_vec = vectorizer.fit_transform(cleaned_bow)
 I looked at the recipe count per cluster and the top words in each cluster to get an idea for how the recipes were distributed.
 
 <p align = 'center'>
-    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-10%20at%209.59.45%20AM.png' width='1500'>
+    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-10%20at%209.59.45%20AM.png'>
 </p>
 
 I also looked at samples of recipes assigned to each cluster:
 
 <p align = 'center'>
-    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-10%20at%209.50.04%20AM.png'>
+    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-10%20at%209.50.04%20AM.png' width='500'>
 </p>
 
 [Back To Top](#table-of-contents)
