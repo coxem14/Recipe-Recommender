@@ -7,19 +7,17 @@
 *Last update: 1/14/2021*
 ***
 
-<p align = 'center'>
-    <img src = ''>
-</p>
-
 ## Table of Contents
   - [Table of Contents](#table-of-contents)
   - [Flask App](#flask-app)
   - [Background](#background)
   - [Data](#data)
   - [EDA](#eda)
+  - 
 
 
 ## Flask App
+[source for background](https://www.foodingredientfacts.org/wp-content/uploads/2017/11/AdobeStock_49033437-dont-fear-ingredients-in-your-food-1024x783.jpeg)
 
 #### Home Page
 <p align = 'center'>
@@ -42,7 +40,7 @@
 </p>
 
 ## Background 
-I've always loved food, and one of my hobbies is to try to recreate my favorite restaurant dishes at home. Since COVID began, my partner and I haven't been going to restaurants, and we've been cooking a ton. We have expanded *(and exhausted)* our recreated restaurant dishes portfolio. Now we are in the exploratory phase to add new recipes to our cook book.
+I've always loved food, and one of my hobbies is to try to recreate my favorite restaurant dishes at home. Since COVID began, my partner and I haven't been going to restaurants, and we've been cooking a ton. We have expanded *(and exhausted)* our recreated restaurant dishes portfolio. Now we are in the exploratory phase to add new recipes to our cook book. I thought it would be fun and helpful to make a content-based recipe recommender.
 
 ## Data
 
@@ -99,7 +97,7 @@ docs_vec = vectorizer.fit_transform(cleaned_bow)
 I looked at the recipe count per cluster and the top words in each cluster to get an idea for how the recipes were distributed.
 
 <p align = 'center'>
-    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-10%20at%209.59.45%20AM.png'>
+    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-10%20at%209.59.45%20AM.png' width='200'>
 </p>
 
 I also looked at samples of recipes assigned to each cluster:
@@ -152,3 +150,20 @@ In this example, the model with the highest perplexity, actually performed bette
 </p>
 
 In the end, I chose this model and vectorizer combination because I felt it did the best job.
+
+```
+vec = CountVectorizer(max_df=0.85, 
+                      min_df=10,
+                      ngram_range=(1,3),
+                      max_features=1000)
+
+tf = vec.fit_transform(cleaned_bow)
+
+lda = LatentDirichletAllocation(n_components=100,
+                                learning_method='online',
+                                learning_offset=50,
+                                doc_topic_prior=0.9,
+                                topic_word_prior=0.9,
+                                batch_size=32,
+lda.fit(tf)
+```
