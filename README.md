@@ -104,7 +104,7 @@ docs_vec = vectorizer.fit_transform(cleaned_bow)
 I looked at the recipe count per cluster and the top words in each cluster to get an idea for how the recipes were distributed.
 
 <p align = 'center'>
-    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-10%20at%209.59.45%20AM.png' width='1000'>
+    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-10%20at%209.59.45%20AM.png' width='1500'>
 </p>
 
 I also looked at samples of recipes assigned to each cluster:
@@ -142,11 +142,11 @@ lda.fit(term_frequency)
 While I was tuning the parameters of my models and vectorizers, I compared the log-likelihood scores as well as perplexity to see if I was making improvements. I wanted to maximize the log-likelihood, while minimizing perplexity.
 
 <p align = 'center'>
-    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-13%20at%209.12.54%20PM.png'>
+    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-13%20at%209.12.54%20PM.png' width='500'>
 </p>
 
 <p align = 'center'>
-    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-13%20at%209.13.04%20PM.png'>
+    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-13%20at%209.13.04%20PM.png' width='500'>
 </p>
 
 However, recent studies have shown that predictive likelihood (or equivalently, perplexity) and human judgment are often not correlated, and even sometimes slightly anti-correlated. [source](https://towardsdatascience.com/evaluate-topic-model-in-python-latent-dirichlet-allocation-lda-7d57484bb5d)
