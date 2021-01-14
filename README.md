@@ -1,57 +1,154 @@
-# Capstone-3 Proposal
+**********************************************
+# Content-Based Recipe Recommender
+**********************************************
 
-### Technologies of Interest
-> I would like to get more experience with AWS, Spark, and Flask this capstone, so when reviewing the ideas, please keep that in mind and let me know if you think any project would be particularly good for those technologies.
+#### Erin Cox
+#### https://github.com/coxem14/Recipe-Recommender
+*Last update: 1/14/2021*
+***
 
-## 1. Recipe Recommender
+<p align = 'center'>
+    <img src = ''>
+</p>
 
-### Background: 
-I've always loved food, and one of my hobbies is to try to recreate my favorite restaurant dishes at home. Since COVID began, my partner and I haven't been going to restaurants, and we've been cooking a ton. We have expanded (and exhausted) our recreated restaurant dishes portfolio. Now we are in the exploratory phase to add new recipes to our cook book.
-
-### Minimum Viable Product:
-Create a content-based recipe recommender (flask app) using features such as title and ingredients. For example, a user could search for a recipe title (or keywords) and/or specify ingredients they have on hand and the recommender will provide them a given number of recipe recommendations.
-
-Getting to the data:
-1. I came across this [website](https://recipe-search.typesense.org/) (open source recipe search app) 
-2. I went to the [GitHub](https://github.com/typesense/showcase-recipe-search) and found a [link](https://github.com/Glorf/recipenlg) to the dataset on another GitHub repo
-3. **The actual dataset is hosted on a project [website](https://recipenlg.cs.put.poznan.pl/)**
-4. I agreed to the Terms and Conditions and downloaded the dataset. The dataset is too large to push to GitHub (even using git lfs, I think the limit is 2 GB), but I was able to load it in [Jupyter Notebook](https://github.com/coxem14/Capstone-3/blob/main/capstone_3.ipynb) just to get a look at it.
-5. Notes from the GitHub: The dataset is 2.2 GB on disk, with ~2.2 million rows. It took 8 minutes to index this dataset on a 3-node Typesense cluster with 4vCPUs per node and the index was 2.7GB in RAM.
-    > *I don't really know what this means, but it sounds pretty big, probably a little much for my macbook to handle*
-
-### Possible Feature Engineering Opportunities
-Things I wish this dataset included but doesn't immediately (the actual website may have this information):
-* Other recipe features like prep time, cooking time, serving size, ethnicity/country of origin, and a rating from users of the website.
-  > *I might be able to feature engineer some of this, but it would involve trying to manually label > 2 million recipes, webscrape > 2 million links, or doing something else that I can't immediately think of - let me know if you have ideas!*
-* Indication of whether or not the recipe is for a breakfast, lunch, dinner, or dessert
-  > *There are several titles that contain the words 'breakfast, lunch, dinner, or dessert' so I could definitely create categories for filtering by those keywords. For the recipes missing those keywords, I might be able to use clustering to categorize them.*
-* Speaking of categories of food, types of food might be interesting to be able to filter by as well (such as 'soup, sandwich, salad, pizza, etc.')
-  > *The user will be able to specify these in the keyword search if nothing else*
-
-## 2. Quick, Draw! Image Classification
-
-### Background: 
-I'd like to get more experience with image classification, and this dataset looks really interesting.
-
-### Minimum Viable Product:
-1. Create a neural network image classifier. It would be cool also if it could predict on doodles in real time (or on video while doodling). 
-2. Explore if people from different countries doodle differently (see if a neural network can classify country of origin from doodles). 
-
-Data:
-* [Quick, Draw! The Data website](https://quickdraw.withgoogle.com/data)
-* [The Quick, Draw! Dataset](https://github.com/googlecreativelab/quickdraw-dataset)
-  > The Quick Draw Dataset is a collection of 50 million drawings across 345 categories, contributed by players of the game Quick, Draw!. The drawings were captured as timestamped vectors, tagged with metadata including what the player was asked to draw and in which country the player was located.
-
-## 3. Board Game Recommender
-
-### Background: 
-I love boardgames as a way to spend time with friends (Tabletop Simulator even makes this possible in COVID times). There are so many board games that I often have trouble figuring out what games to try next.
-
-### Minimum Viable Product:
-Create a similarity-based boardgame recommender (flask app) using most important features (would need to find the most important features using some kind of dimensionality reduction technique). For example, a user could search for a specific game and/or specify a game that they like (or dislike) and the recommender will provide them a given number of game recommendations of the top rated games that are most similar (or most dissimilar) to the game they entered. Ideally the user would also be able to narrow the results by filtering by certain features such as number of players, play time, age range, etc.
-
-Data:
-* Kaggle: [20000 Boardgames Dataset](https://www.kaggle.com/extralime/20000-boardgames-dataset)
-  > The data for the dataset was scraped directly from boardgamegeek.com. The rank of each game is based on its rank on January 13th, 2020 (previous version: Jan 8,2020). The dataset is for practicing EDA and recommender engines. The dataset has 52 feature columns.
+## Table of Contents
+  - [Table of Contents](#table-of-contents)
+  - [Flask App](#flask-app)
+  - [Background](#background)
+  - [Data](#data)
+  - [EDA](#eda)
 
 
+## Flask App
+
+#### Home Page
+<p align = 'center'>
+    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-11%20at%2012.38.32%20PM.png'>
+</p>
+
+#### Explore Page
+<p align = 'center'>
+    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-11%20at%2012.40.47%20PM.png'>
+</p>
+
+#### Results Page
+<p align = 'center'>
+    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-11%20at%2012.41.22%20PM.png'>
+</p>
+
+#### Webpage for Recipe
+<p align = 'center'>
+    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-11%20at%2012.42.57%20PM.png'>
+</p>
+
+## Background 
+I've always loved food, and one of my hobbies is to try to recreate my favorite restaurant dishes at home. Since COVID began, my partner and I haven't been going to restaurants, and we've been cooking a ton. We have expanded *(and exhausted)* our recreated restaurant dishes portfolio. Now we are in the exploratory phase to add new recipes to our cook book.
+
+## Data
+
+I stumbled upon an awesome open source instant search [website](https://recipe-search.typesense.org/) which had over 2 million recipes. I tracked down the original dataset and downloaded it from [RecipeNLG](https://recipenlg.cs.put.poznan.pl/). The dataset was originally created to address challenges with semi-structured text generation.
+
+The dataset contains 2,231,142 recipes. Approximately 1.6M of the recipes were formatted to have better quality (source = Gathered). I used 250K subset of these recipes in my project. The dataset included 6 feature columns containing strings of lists and text.
+
+### Before cleaning:
+<p align = 'center'>
+    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-10%20at%2010.18.47%20AM.png'>
+</p>
+
+### The ingredients, directions, and NER columns were strings of lists of strings.
+
+<p align = 'center'>
+    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-10%20at%2010.19.24%20AM.png'>
+</p>
+
+### After cleaning:
+<p align = 'center'>
+    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-10%20at%2010.24.39%20PM.png'>
+</p>
+
+## EDA
+
+There were a total of 11 different sites that the recipes came from. When creating my subset, I split the data stratified by site to preserve the ratios of the websites in my subset.
+
+### Recipe Website Distribution:
+<p align = 'center'>
+    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-10%20at%2010.55.10%20PM.png'>
+</p>
+
+## Topic Modeling with KMeans Clustering
+
+I used Scikit-Learn's KMeans Clustering over a range of k values to get an idea of how many topics were present in the dataset. I found 100 clusters (topics) resulted in the best silhouette scores.
+
+```
+vectorizer = TfidfVectorizer(max_df=0.85,
+                             min_df=10,
+                             ngram_range=(1,3),
+                             max_features=1000)
+
+docs_vec = vectorizer.fit_transform(cleaned_bow)
+```
+
+<p align = 'center'>
+    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-11%20at%205.09.54%20PM.png'>
+</p>
+
+<p align = 'center'>
+    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-11%20at%204.53.17%20PM.png'>
+</p>
+
+I looked at the recipe count per cluster and the top words in each cluster to get an idea for how the recipes were distributed.
+
+<p align = 'center'>
+    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-10%20at%209.59.45%20AM.png'>
+</p>
+
+I also looked at samples of recipes assigned to each cluster:
+
+<p align = 'center'>
+    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-10%20at%209.50.04%20AM.png'>
+</p>
+
+## Topic Modeling with Latent Dirichlet Allocation (LDA)
+
+I used Scikit-Learn's Latent Dirichlet Allocation model as the basis for my recommender. I vectorized the recipe bag-of-words using Scikit-Learn's CountVectorizer(). I experimented with the document frequencies, ngram range, and max features parameters.
+
+```
+vec = CountVectorizer(max_df=0.85, 
+                      min_df=2,
+                      ngram_range=(1,2),
+                      max_features=1000)
+
+term_frequency = vec.fit_transform(cleaned_bow)
+```
+
+For the LDA model itself, I experimented with the learning offset, document-topic and topic-word priors, and batch size.
+
+```
+lda = LatentDirichletAllocation(n_components=100,
+                                learning_method='online',
+                                learning_offset=10,
+                                doc_topic_prior=0.01,
+                                topic_word_prior=0.01,
+                                batch_size=128)
+lda.fit(term_frequency)
+```
+While I was tuning the parameters of my models and vectorizers, I compared the log-likelihood scores as well as perplexity to see if I was making improvements. I wanted to maximize the log-likelihood, while minimizing perplexity.
+
+<p align = 'center'>
+    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-13%20at%209.12.54%20PM.png'>
+</p>
+
+<p align = 'center'>
+    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-13%20at%209.13.04%20PM.png'>
+</p>
+
+However, recent studies have shown that predictive likelihood (or equivalently, perplexity) and human judgment are often not correlated, and even sometimes slightly anti-correlated. [source](https://towardsdatascience.com/evaluate-topic-model-in-python-latent-dirichlet-allocation-lda-7d57484bb5d)
+I definitely found this to be the case when I was analyzing the recommendations of my models.
+
+In this example, the model with the highest perplexity, actually performed better when recommending recipes similar to the reference recipe.
+
+<p align = 'center'>
+    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-13%20at%209.17.50%20PM.png'>
+</p>
+
+In the end, I chose this model and vectorizer combination because I felt it did the best job.
