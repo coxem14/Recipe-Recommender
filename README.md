@@ -9,11 +9,12 @@
 
 ## Table of Contents
   - [Table of Contents](#table-of-contents)
-  - [Flask App](#flask-app)
-  - [Background](#background)
-  - [Data](#data)
-  - [EDA](#eda)
-  - 
+    - [Flask App](#flask-app)
+    - [Background](#background)
+    - [Data](#data)
+    - [EDA](#eda)
+    - [Topic Modeling with KMeans Clustering](#topic-modeling-with-kmeans-clustering)
+    - [Topic Modeling with Latent Dirichlet Allocation](#topic-modeling-with-latent-dirichlet-allocation-lda)
 
 
 ## Flask App
@@ -38,6 +39,8 @@
 <p align = 'center'>
     <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-11%20at%2012.42.57%20PM.png'>
 </p>
+
+[Back To Top](#table-of-contents)
 
 ## Background 
 I've always loved food, and one of my hobbies is to try to recreate my favorite restaurant dishes at home. Since COVID began, my partner and I haven't been going to restaurants, and we've been cooking a ton. We have expanded *(and exhausted)* our recreated restaurant dishes portfolio. Now we are in the exploratory phase to add new recipes to our cook book. I thought it would be fun and helpful to make a content-based recipe recommender.
@@ -64,6 +67,8 @@ The dataset contains 2,231,142 recipes. Approximately 1.6M of the recipes were f
     <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-10%20at%2010.24.39%20PM.png'>
 </p>
 
+[Back To Top](#table-of-contents)
+
 ## EDA
 
 There were a total of 11 different sites that the recipes came from. When creating my subset, I split the data stratified by site to preserve the ratios of the websites in my subset.
@@ -72,6 +77,8 @@ There were a total of 11 different sites that the recipes came from. When creati
 <p align = 'center'>
     <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-10%20at%2010.55.10%20PM.png'>
 </p>
+
+[Back To Top](#table-of-contents)
 
 ## Topic Modeling with KMeans Clustering
 
@@ -87,17 +94,17 @@ docs_vec = vectorizer.fit_transform(cleaned_bow)
 ```
 
 <p align = 'center'>
-    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-11%20at%205.09.54%20PM.png'>
+    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-11%20at%205.09.54%20PM.png' width='500'>
 </p>
 
 <p align = 'center'>
-    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-11%20at%204.53.17%20PM.png'>
+    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-11%20at%204.53.17%20PM.png' width='500'>
 </p>
 
 I looked at the recipe count per cluster and the top words in each cluster to get an idea for how the recipes were distributed.
 
 <p align = 'center'>
-    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-10%20at%209.59.45%20AM.png' width='200'>
+    <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-10%20at%209.59.45%20AM.png' width='1000'>
 </p>
 
 I also looked at samples of recipes assigned to each cluster:
@@ -105,6 +112,8 @@ I also looked at samples of recipes assigned to each cluster:
 <p align = 'center'>
     <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-10%20at%209.50.04%20AM.png'>
 </p>
+
+[Back To Top](#table-of-contents)
 
 ## Topic Modeling with Latent Dirichlet Allocation (LDA)
 
@@ -167,3 +176,4 @@ lda = LatentDirichletAllocation(n_components=100,
                                 batch_size=32,
 lda.fit(tf)
 ```
+[Back To Top](#table-of-contents)
