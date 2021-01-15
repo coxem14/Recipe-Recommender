@@ -150,7 +150,7 @@ While I was tuning the parameters of my models and vectorizers, I compared the l
     <img src = 'https://github.com/coxem14/Recipe-Recommender/blob/main/images/Capstone_3_ScreenShots/Screen%20Shot%202021-01-13%20at%209.13.04%20PM.png' width='500'>
 </p>
 
-However, studies have shown that predictive likelihood (or equivalently, perplexity) and human judgment are often not correlated, and even sometimes slightly anti-correlated. [source](https://towardsdatascience.com/evaluate-topic-model-in-python-latent-dirichlet-allocation-lda-7d57484bb5d)
+However, studies have shown that predictive likelihood (or equivalently, perplexity) and human judgment are often not correlated, and even sometimes slightly anti-correlated<sup>[4]</sup>.
 I definitely found this to be the case when I was analyzing the recommendations of my models.
 
 In this example, the model with the highest perplexity, actually performed better when recommending recipes similar to the reference recipe.
@@ -180,9 +180,9 @@ lda.fit(tf)
 [Back To Top](#table-of-contents)
 
 ## References
-* Flask App: [Ski Run Recommender](https://github.com/kfarbman/ski-recommender)
-* Flask App Background: [Food Ingredient Facts](https://www.foodingredientfacts.org/chemophobia/)
-* Dataset: [RecipeNLG](https://recipenlg.cs.put.poznan.pl/)
-* Model Evaluation: 
-  * Towards Data Science - Evaluate Topic Models: Latent Dirichlet Allocation (LDA)
-  * [Paper](https://papers.nips.cc/paper/2009/file/f92586a25bb3145facd64ab20fd554ff-Paper.pdf)
+1. Flask App: [Ski Run Recommender](https://github.com/kfarbman/ski-recommender)
+2. Flask App Background: [Food Ingredient Facts](https://www.foodingredientfacts.org/chemophobia/)
+3. Dataset: [RecipeNLG](https://recipenlg.cs.put.poznan.pl/)
+4. Model Evaluation: 
+  a. Towards Data Science - Evaluate Topic Models: Latent Dirichlet Allocation (LDA)
+  b. [Paper](https://papers.nips.cc/paper/2009/file/f92586a25bb3145facd64ab20fd554ff-Paper.pdf)
