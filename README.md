@@ -184,7 +184,8 @@ lda.fit(tf)
 * Flask App Background: [Food Ingredient Facts](https://www.foodingredientfacts.org/chemophobia/)
 * Dataset: [RecipeNLG](https://recipenlg.cs.put.poznan.pl/)
 * Model: 
-  * [Towards Data Science](https://towardsdatascience.com/evaluate-topic-model-in-python-latent-dirichlet-allocation-lda-7d57484bb5d) [Paper](https://papers.nips.cc/paper/2009/file/f92586a25bb3145facd64ab20fd554ff-Paper.pdf)
+  * [Towards Data Science](https://towardsdatascience.com/evaluate-topic-model-in-python-latent-dirichlet-allocation-lda-7d57484bb5d)
+  * [Paper](https://papers.nips.cc/paper/2009/file/f92586a25bb3145facd64ab20fd554ff-Paper.pdf)
 
 
 
