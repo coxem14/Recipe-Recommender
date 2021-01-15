@@ -184,5 +184,5 @@ lda.fit(tf)
 2. Flask App Background: [Food Ingredient Facts](https://www.foodingredientfacts.org/chemophobia/)
 3. Dataset: [RecipeNLG](https://recipenlg.cs.put.poznan.pl/)
 4. Model Evaluation: 
-  a. Towards Data Science - Evaluate Topic Models: Latent Dirichlet Allocation (LDA)
-  b. [Paper](https://papers.nips.cc/paper/2009/file/f92586a25bb3145facd64ab20fd554ff-Paper.pdf)
+   1.  Towards Data Science - Evaluate Topic Models: Latent Dirichlet Allocation (LDA)
+   2. [Paper](https://papers.nips.cc/paper/2009/file/f92586a25bb3145facd64ab20fd554ff-Paper.pdf)
